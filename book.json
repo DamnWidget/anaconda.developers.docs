@@ -9,14 +9,14 @@
             "font": {
                 "size": null,
                 "family": "Impact",
-                "color": "#FFF"
+                "color": "#777"
             },
             "size": {
                 "w": 1800,
                 "h": 2360
             },
             "background": {
-                "color": "#09F"
+                "color": "#428bca"
             }
         }
     }
