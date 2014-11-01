@@ -16,7 +16,7 @@ intent to contribute to anaconda.
 * **Lines shouldn't exceed 79 characters length**
 * Tabs **must** be replaced by four blank spaced, **never merge** tabs and blank spaces
 * **Never** use multiple statements in the same line, e.g. `if check is True: a = 0` with the only exception for [conditional expressions](http://docs.python.org/3/reference/expressions.html#conditional-expressions)
-* Complehensions are preferred to the built-in functions `filter` and `map` when appropiate
+* Comprehensions are preferred to the built-in functions `filter` and `map` when appropriate
 * Only use a `global` declaration in a function if that function actually modifies the global variable
 * Use the `format` method to format strings instead of the *semi-deprecated* old `'%s' % (data,)` way
 * Use single quotes `'` to enclose your strings instead of the double quotes `"`
@@ -28,4 +28,4 @@ intent to contribute to anaconda.
 1. Never violate [DRY](http://programmer.97things.oreilly.com/wiki/index.php/Don%27t_Repeat_Yourself)
 2. Any code change **must** pass unit tests and shouldn't break any other test in the system
 3. No commit should break the master build
-4. No change should break user code silently, deprecations and incompatibilities must be always a kown (and well documented) matter.
+4. No change should break user code silently, deprecations and incompatibilities must be always a known (and well documented) matter.

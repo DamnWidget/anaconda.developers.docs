@@ -4,11 +4,11 @@ Anaconda uses GitHub as project tracker as well as repository and development/co
 
 # Anaconda's 12 steps contribution workflow
 
-This is a resumed description of the general process for commiting code into the master branch of the anaconda project. There are exceptions to this general workflow like for example, security updates or critical bug fixes, minor changes to documentation or typo fixes and of course critical fixes on broken builds.
+This is a resumed description of the general process for committing code into the master branch of the anaconda project. There are exceptions to this general workflow like for example, security updates or critical bug fixes, minor changes to documentation or typo fixes and of course critical fixes on broken builds.
 
 ## The Development Workflow
 
-All the develoment workflow is performed in the [Anaconda's GitHub](https://github.com/DamnWidget/anaconda) project site.
+All the development workflow is performed in the [Anaconda's GitHub](https://github.com/DamnWidget/anaconda) project site.
 
 1. When you are going to start to work in a fix or create a new feature you have to make sure of
     1. Make sure there is already an open issue related with the code that you are going to submit. If that is not the case, create it yourself.

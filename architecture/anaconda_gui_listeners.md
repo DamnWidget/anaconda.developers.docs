@@ -17,13 +17,13 @@ class AnacondaAutoformatPEP8EventListener(sublime_plugin.EventListener):
 
 ## Anatomy of a GUI Listener
 
-The bigest (and probably most complex) is the one responsible of the linting process, and it's just one hundred thirty eight lines long, as you can see the anaconda architecture makes the code pretty easy to maintain.
+The biggest (and probably most complex) is the one responsible of the linting process, and it's just one hundred thirty eight lines long, as you can see the anaconda architecture makes the code pretty easy to maintain.
 
 Listeners work in a very similar way as the GUI commands do, the most obvious difference is that they are triggered by GUI events like open or save a file, focus a file or start/stop writing. Obviously, depending on the feature that they implement they are more or less complex.
 
 In the case of the `AnacondaAutoformatPEP8EventListener` it just runs the GUI command `AnacondaAutoFormat` as soon as a Python buffer is being saved so it's interaction with the JsonServer is delegated to the GUI command.
 
-A more complex example that interacts itself with the JsonServer but simple enough to don't get lost in implementation details is the `AnacondaSignaturesEventListener` that is used to display the signature of whatever function that is under the cursor in any moment in a completely asynchronous way and with a perfec performance that no any other plugin can replicate.
+A more complex example that interacts itself with the JsonServer but simple enough to don't get lost in implementation details is the `AnacondaSignaturesEventListener` that is used to display the signature of whatever function that is under the cursor in any moment in a completely asynchronous way and with a perfect performance that no any other plugin can replicate.
 
 ```python
 # Copyright (C) 2013 - Oscar Campos <oscar.campos@member.fsf.org>
@@ -131,7 +131,7 @@ The `on_modified` method is fired from the Sublime Text 3 plugin system as soon 
             print(error)
 ```
 
-We enclose the code into a `try except` block, as usual we capture the location of the cursor in the current buffer and set it as value for the semantic variable `location`. The `(`, `)` conditional is not ilustrative and it will be ignored as it just an implementation detail of the specific feature.
+We enclose the code into a `try except` block, as usual we capture the location of the cursor in the current buffer and set it as value for the semantic variable `location`. The `(`, `)` conditional is not illustrative and it will be ignored as it just an implementation detail of the specific feature.
 
 As with the GUI commands, we prepare the JSON data to be sent as a Python dictionary using the helper `prepare_send_data` and set the value of the variable `data` with its returned value. Then we instantiate a new instance of the `Worker` class and call it's `execute` method passing this time a standard `functools` library `partial` object that will be called back when a response from the JsonServer is available.
 
@@ -156,16 +156,16 @@ The `prepare_data` method will be called by the `partial` wrapper with the `view
 
 Then we process the returned data to extract the method signature from the documentation that the JsonServer just returned back to us and show it to the user using the `_show_status` method that just use the Sublime Text 3 status bar to display the information.
 
-Note than we don't set the `AnacondaSignaturesEventListener.documentation` as `None` as this class is not recursive and it doesn't call itself again to display results. This is what we call a continnuous syncing class.
+Note than we don't set the `AnacondaSignaturesEventListener.documentation` as `None` as this class is not recursive and it doesn't call itself again to display results. This is what we call a continuous syncing class.
 
-Finaly we call the `erase_status` method from the Sublime Text 3 `view` object if there is nothing to show
+Finally we call the `erase_status` method from the Sublime Text 3 `view` object if there is nothing to show
 
-**note**: we need to use the `partial` object because we need a way to refernce the `view` that made the call to the JsonServer in a clean and reliable way
+**note**: we need to use the `partial` object because we need a way to reference the `view` that made the call to the JsonServer in a clean and reliable way
 
 
 ## How are the listeners injected into the plugin?
 
-As with the GUI commands, the listeners are inyected into the plugin using the `__all__` exported objects list in the `listeners/__init__.py` file.
+As with the GUI commands, the listeners are injected into the plugin using the `__all__` exported objects list in the `listeners/__init__.py` file.
 
 ```python
 # Copyright (C) 2013 - Oscar Campos <oscar.campos@member.fsf.org>

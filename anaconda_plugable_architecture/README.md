@@ -35,7 +35,7 @@ if anaconda_version < (1,3,4):
 
 ## Anaconda vs anaconda imports mess
 
-Anaconda can be installed trough GitHub by just cloning the repository into the Sublime Text 3 `Packages` directory or using the `Command Palette` as human that I am, I make mistakes and probably the bigest one was to name the plugin as `Anaconda` in the Packages Control packages channel so anyone that install the plugin using the `Command Palette` ends with a package called `Anaconda` in their `Packages` directory instead of the `anaconda` that get installed when using git.
+Anaconda can be installed trough GitHub by just cloning the repository into the Sublime Text 3 `Packages` directory or using the `Command Palette` as human that I am, I make mistakes and probably the biggest one was to name the plugin as `Anaconda` in the Packages Control packages channel so anyone that install the plugin using the `Command Palette` ends with a package called `Anaconda` in their `Packages` directory instead of the `anaconda` that get installed when using git.
 
 Now is not that easy to change that so the solution is to make a wrapper around the imports just to make sure that if the anaconda plugin is installed from whatever source, the imports works fine. An example of this is the `anaconda_lib.anaconda_plugin` module in the `anaconda_php` plugin
 
@@ -103,4 +103,4 @@ def get_settings(view, name, default=None):
 
 You have freedom to design your plugin as you want as far as you decouple command calls and process of results from the process of the command and the generation of the result itself but I hardly recommend to approach an architecture and design similar to [anaconda_php](https://github.com/DamnWidget/anaconda_php) as it is after all a reference implementation of an anaconda compatible plugin.
 
-For more information about how to decouple this, refer to the `anaconda_php` code and to the `Anaconda Architectire and Design` section in this same documentation.
+For more information about how to decouple this, refer to the `anaconda_php` code and to the `Anaconda Architecture and Design` section in this same documentation.

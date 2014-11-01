@@ -16,7 +16,7 @@ To improve anaconda, we need feedback from our users that fill bug reports using
 
 We improve anaconda because we use it daily in our work but that doesn't means that our vision of how the plugin has to behave is always the right one, or cover all the use cases. Is for that we need suggestions about feature implementation or improvements to already existent features.
 
-The policy to ask for a new feature or add an improvement to an already existant one, is the same as with the bug reports.
+The policy to ask for a new feature or add an improvement to an already existent one, is the same as with the bug reports.
 
 ### Code Contributions
 

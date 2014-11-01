@@ -17,11 +17,11 @@ If `lang` is different than `python` then, the check will be performed to that l
 
 If the `ignore_comments` is `True` then the check will return a positive result even if what is under the cursor is a comment, this is useful to things like the `PEP257` linter that lints docstrings.
 
-Finally if `ignore_repl` is set as `True`, anaconda will return postive result inside `SublimeREPL` buffers, this may or may not be desirable depending on the feature that you are implementing.
+Finally if `ignore_repl` is set as `True`, anaconda will return positive result inside `SublimeREPL` buffers, this may or may not be desirable depending on the feature that you are implementing.
 
 ## is_python
 
-This is exactly as the `is_code` function but is used only in anaconda related actions itself (as anaconda as plugin works only with Python), and it's just a covenience method.
+This is exactly as the `is_code` function but is used only in anaconda related actions itself (as anaconda as plugin works only with Python), and it's just a convenience method.
 
 ## check_linting
 

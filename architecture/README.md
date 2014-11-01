@@ -1,13 +1,13 @@
 # Anaconda Architecture and Design
 
-Anaconda is a decoupled asynchornous client-server implementation where the presentation logic (tied directly with the Sublime Text 3 GUI) and the plugin logic is completely decoupled in a way that it makes possible to archieve the following goals:
+Anaconda is a decoupled asynchronous client-server implementation where the presentation logic (tied directly with the Sublime Text 3 GUI) and the plugin logic is completely decoupled in a way that it makes possible to achieve the following goals:
 
 1. Make possible the plugin to work with interpreters different than the Sublime Text 3 embedded one (that in the moment of writing those lines is Python 3.3.3)
-2. Make possible to run every operation perfomed by the plugin in totally and real asynchronous way non blocking the Global Intepreter Lock (GIL) into the Sublime Text 3's python embedded intrepreter
+2. Make possible to run every operation performed by the plugin in totally and real asynchronous way non blocking the Global Interpreter Lock (GIL) into the Sublime Text 3's python embedded interpreter
 3. Make possible to use Vagrant boxes
 4. Make possible to work with remote servers
 5. Make possible to work with PyPy, Stackless Python, Jython, IronPython and others
-6. Make possible an independient plugable architecture that can be used to offer anaconda as asynchornous high performance framework for other plugins
+6. Make possible an independent plugable architecture that can be used to offer anaconda as asynchronous high performance framework for other plugins
 
 This architecture has it's handicaps as well, the most important are:
 

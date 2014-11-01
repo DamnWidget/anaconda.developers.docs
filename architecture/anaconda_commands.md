@@ -1,6 +1,6 @@
 # Anaconda GUI Commands
 
-Anaconda GUI commands lives into the `commands` package of the anaconda plugin root directory. Each one is an isolated piece of code that normally depends in some way of the `anaconda_lib` package where common functionallity is implemented.
+Anaconda GUI commands lives into the `commands` package of the anaconda plugin root directory. Each one is an isolated piece of code that normally depends in some way of the `anaconda_lib` package where common functionality is implemented.
 
 **note**: this is true with the exception of the Vagrant related commands that are all contained into the `commands/vagrant.py` file and the tests runner related commands that are contained into the `commands/anaconda_test_runner.py` files because it made sense to put commands that are feature related into the same file.
 
@@ -8,11 +8,11 @@ Anaconda GUI commands lives into the `commands` package of the anaconda plugin r
 
 Usually, anaconda GUI commands surprises new developers because their simplicity, that is because anaconda commands are really dumb and they know nothing about how to execute any of the actions related to them.
 
-The only that an anaconda GUI command has to know how to do is to capture where the cursor is located into a buffer, the buffer itself and the name of the file being edited and pass that information to the anacoda's callback system that will handle the command trigger and delegate all the heavy process to the JsonServer while register a callback to process the response when it is ready to be delivered.
+The only that an anaconda GUI command has to know how to do is to capture where the cursor is located into a buffer, the buffer itself and the name of the file being edited and pass that information to the anaconda's callback system that will handle the command trigger and delegate all the heavy process to the JsonServer while register a callback to process the response when it is ready to be delivered.
 
 Every anaconda command has to know how to process the results from the callback system and how to present this information to the end user.
 
-The ususal design of an anaconda GUI command is as follows:
+The usual design of an anaconda GUI command is as follows:
 
 ```python
 # Copyright (C) 2013 ~ 2014 - Oscar Campos <oscar.campos@member.fsf.org>
@@ -146,14 +146,14 @@ def run(self, edit):
 
         if self.data is None:
 ```
-We use the `data` property to know when we have to fire the command execution into the JsonServer or process it results when they become available reusing the Sublime Text 3 plugin call functionallity itself.
+We use the `data` property to know when we have to fire the command execution into the JsonServer or process it results when they become available reusing the Sublime Text 3 plugin call functionality itself.
 
 ```python
             try:
                 loc = self.view.rowcol(self.view.sel()[0].begin())
 ```
 
-We always enclose the code into a `try except` block just to don't fail miserably in case that something goes wrong. As I already anoted before, we capture the current location of the cursor in the current buffer and store it in the `loc` variable.
+We always enclose the code into a `try except` block just to don't fail miserably in case that something goes wrong. As I already noted before, we capture the current location of the cursor in the current buffer and store it in the `loc` variable.
 
 ```python
                 jserver_command = 'whatever'
@@ -163,7 +163,7 @@ We always enclose the code into a `try except` block just to don't fail miserabl
                 )
 ```
 
-The `jserver_command` is the command that we want to execute in the JsonServer context, this command is suposed to be handled by the `jedi` handler (that's not true as this command does not exists but this is useful for our ilustrative purposes) so this is translated to
+The `jserver_command` is the command that we want to execute in the JsonServer context, this command is supposed to be handled by the `jedi` handler (that's not true as this command does not exists but this is useful for our illustrative purposes) so this is translated to
 <blockquote>Hey JsonServer, use the jedi handler to execute the whatever command</blockquote>
 
 Then we prepare the data that we are going to send to the JsonSever using the `prepare_send_data` command that just prepare a common JSON structure for us represented as a Python dictionary.
@@ -173,7 +173,7 @@ Then we prepare the data that we are going to send to the JsonSever using the `p
                     Callback(on_success=self.prepare_data), **data)
 ```
 
-This is an important piece of code here. We instantiate a new instance of the `Worker` class and call it's execute method with two argumnets.
+This is an important piece of code here. We instantiate a new instance of the `Worker` class and call it's execute method with two arguments.
 
 1. An instance of the Callback class with the `on_success` callback set as `self.prepare_data`
 2. The data dictionary that was prepared in the previous block unpacked
@@ -185,7 +185,7 @@ This is an important piece of code here. We instantiate a new instance of the `W
             self.print_data(edit)
 ```
 
-If there is some exceptio we just logging the error in the Sublime Text 3 console. The else correspond to the first conditional check, this is hit when we have a result comming back from the JsonServer and our function is called again by the callback that we passed to the `Callback` instance.
+If there is some exception we just logging the error in the Sublime Text 3 console. The else correspond to the first conditional check, this is hit when we have a result coming back from the JsonServer and our function is called again by the callback that we passed to the `Callback` instance.
 
 ```python
     def prepare_data(self, data):
@@ -202,9 +202,9 @@ If there is some exceptio we just logging the error in the Sublime Text 3 consol
 
 This piece of code is pretty straightforward, this method is called when there is a result available in the `Callback` mechanism with a single parameters that is whatever response that came from the JsonServer after process our request.
 
-We check that the request was sucessful and then set the value of the `AnacondaWhatever.data` property with the data that the JsonServer returned back. If there is no data at all, we call the method `self._show_status()` that just display an error message to the user in the status bar.
+We check that the request was successful and then set the value of the `AnacondaWhatever.data` property with the data that the JsonServer returned back. If there is no data at all, we call the method `self._show_status()` that just display an error message to the user in the status bar.
 
-Otherwise we call the `AnacondaWhatever` method again using the internal Sublime Text 3 API call, as the `AnacondaWhatever.data` property is set, it will hit the `else` conditional at the begining of the `run` method and then the `print_data` dummy method will be called.
+Otherwise we call the `AnacondaWhatever` method again using the internal Sublime Text 3 API call, as the `AnacondaWhatever.data` property is set, it will hit the `else` conditional at the beginning of the `run` method and then the `print_data` dummy method will be called.
 
 **note**: the specific data structure that is returned back from the JsonServer will be explained in subsequent sections
 

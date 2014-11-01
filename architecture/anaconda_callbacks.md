@@ -34,7 +34,7 @@ Worker.execute(callback, **data)
 
 <blockquote>**note**: if the `timeout` in a callback is set to `0` or less, the `on_timeout` will never be fired.</blockquote>
 
-Anaconda's `Callback` also implement a convenience `on` method that you can use to assign actions afetr the `Callback` object has been created
+Anaconda's `Callback` also implement a convenience `on` method that you can use to assign actions after the `Callback` object has been created
 
 ```python
 ...
@@ -47,7 +47,7 @@ callback.on(timeout=show_error)
 
 <blockquote>**note**: in the case of using the `on` method, the failure is mapped as `error`</blockquote>
 
-The last useful method in the `Callback` object is the `timeout` property (that is a `@property` method) that can be used to assign a timeout to a callback after it has been created (or to retrive it's value).
+The last useful method in the `Callback` object is the `timeout` property (that is a `@property` method) that can be used to assign a timeout to a callback after it has been created (or to retrieve it's value).
 
 ```python
 ...
@@ -56,4 +56,4 @@ callback.timeout = 2
 ...
 ```
 
-<blockquote>**remmeber**: all the timeouts are in seconds, so if you want to assign a timeout of half a second, use the decimal notation e.g. `callback.timeout = 0.5`</blockquote>
+<blockquote>**remember**: all the timeouts are in seconds, so if you want to assign a timeout of half a second, use the decimal notation e.g. `callback.timeout = 0.5`</blockquote>

@@ -1,14 +1,14 @@
 # Submiting Code
 
 Code submition in anaconda is done trough the [GitHub Pull Request System](https://help.github.com/articles/using-pull-requests)
-so you should be familiarized with it before trying to contribute your code into anconda.
+so you should be familiarized with it before trying to contribute your code into anaconda.
 
 ## Contributing with a bug fix
 
 You found a bug and you are planning to fix it and share the fix with the rest of the community?.
 First of all, thank you very much, contributions like that make anaconda better and maintains it alive.
 
-Before start working in yor fix, you have to go to the [anaconda issues](https://github.com/DanWidget/anaconda/issues)
+Before start working in your fix, you have to go to the [anaconda issues](https://github.com/DanWidget/anaconda/issues)
 and look for the bug that you've found because maybe some other person is working on fix it already.
 
 If you don't find any open issue related to the bug that you found, make sure that the bug is not

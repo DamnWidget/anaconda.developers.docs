@@ -6,7 +6,7 @@ Before to send your pull request you have to follow the following general rules.
 2. Your message has to be descriptive and useful. First line should be a descriptive sentence about what the commit is doing. It has to be **clear and fully understandable** what the full commit is going to do just reading that single line.
 3. You have to include the issue number prefixed with `#` at the end of the first line
 4. The next line should be a blank line followed by an enumerated list with the commit details
-5. Add the right keyworkds for the commit as described in [Closing issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages) in the GitHub documentation.
+5. Add the right keywords for the commit as described in [Closing issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages) in the GitHub documentation.
 
 Finally you have to get a commit message like this one:
 ```

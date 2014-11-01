@@ -9,11 +9,11 @@ The `Worker` system consist in two files that lives in the `anaconda_lib` direct
 
 ## The JsonClient
 
-The JsonClient is just an implementation of the anaconda's `ioloop.Eventhandler` class. In the earlier days of the plugin, the client was using the standard library `asyncore` and `asynchat` implementations but they are not much than a toy and Windows support was totally broken. As there were no other real options @damnwidget implemented a small and simple I/O event driven socket that uses the widely accesible `select` mechanism to implement an asynchronous TCP socket client that was good enough to support the plugin needs.
+The JsonClient is just an implementation of the anaconda's `ioloop.Eventhandler` class. In the earlier days of the plugin, the client was using the standard library `asyncore` and `asynchat` implementations but they are not much than a toy and Windows support was totally broken. As there were no other real options @damnwidget implemented a small and simple I/O event driven socket that uses the widely accessible `select` mechanism to implement an asynchronous TCP socket client that was good enough to support the plugin needs.
 
 The anaconda's `ioloop` is a classical asynchronous handler implementation to use it, user code has to implement a handler class that inherits from `ioloop.EventHandler` and implements at least the `handle_read` and `process_message` methods.
 
-An example of a client immplementation is as follows:
+An example of a client implementation is as follows:
 
 ```python
 import ioloop
@@ -37,15 +37,15 @@ class TestClient(ioloop.EventHandler):
         self.message = []
 ```
 
-<blockquote>**note**: select is not a real good choice for environments that needs to handle lots of connections concurrently, for an asnchronous client that is not going to try to perform more than five or six operations concurrently is just fine.</blockquote>
+<blockquote>**note**: select is not a real good choice for environments that needs to handle lots of connections concurrently, for an asynchronous client that is not going to try to perform more than five or six operations concurrently is just fine.</blockquote>
 
 The JsonClient knows how to communicate with the remote asynchronous socket of the JsonServer as well as register callbacks to handle the JsonServer responses when they are available.
 
 Each JsonServer has a hashmap where the key is a hexed unique id and the content is a callback. Before to send a request to the JsonServer, a JsonClient instance generate a hexed unique id for that request and register a callback on it, then it send the hexed unique id to the JsonServer that will send it back with it results all together.
 
-When the JsonClient handle a reponse from the JsonServer, it lookup in it's hexed unique ids hash map for the hex id and fire the registered callback with the data that the JsonServer returned. Then the callback is removed form the hash map.
+When the JsonClient handle a response from the JsonServer, it lookup in it's hexed unique ids hash map for the hex id and fire the registered callback with the data that the JsonServer returned. Then the callback is removed form the hash map.
 
-The callback can be an anconda `Callback` object or whatever other callable object.
+The callback can be an anaconda `Callback` object or whatever other callable object.
 
 ## The Worker
 
@@ -53,7 +53,7 @@ The `Worker` is one of the most important parts of the GUI related code (if not 
 
 It register each window in a self managed workers list for each Sublime Text 3 window that contains Python code, the worker can be local or remote so it make us able to use JsonServers in remote systems or in vagrant boxes for example.
 
-When a worker is stablished and a JsonServe is started, it register a JsonClient instance and connects it to the JsonServer and start registering callbacks.
+When a worker is established and a JsonServe is started, it register a JsonClient instance and connects it to the JsonServer and start registering callbacks.
 
 The worker checks for JsonSever healthy in every moment reloading or starting new servers as required, it is responsible of kill old JsonServers and start new ones on project or `python_interpeter` switches.
 

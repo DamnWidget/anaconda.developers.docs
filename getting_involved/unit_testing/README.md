@@ -10,7 +10,7 @@ Unit test a Sublime Text plugin is not easy as it has to run into the embedded S
 interpreter as the `sublime` and `sublime_plugin` modules will not work otherwise. There are a few
 of projects that aims to help the plugin developers to unit test their projects in Sublime Text, we
 think only one of them offer real capabilities to do so and it's this one that we use (and we also
-cotribute with).
+contribute with).
 
 This one is the Randy Lai's [UnitTesting](https://github.com/randy3k/UnitTesting) Sublime Text
 plugin.
@@ -23,7 +23,7 @@ Sublime Text 3 using the `Command Palette`
 ## How to run tests
 
 Anaconda has two different test suites that need to be run by separate. The first one is the
-part of anaconda that is realated to the Sublime Text 3 runtime environment, the second one is
+part of anaconda that is related to the Sublime Text 3 runtime environment, the second one is
 related with the anaconda's JsonServer component.
 
 ### Run the GUI related tests
@@ -50,7 +50,7 @@ tests should be Ok when you run the tests suites in the project.
 If you commit code that breaks the unit test suite you can be *hunted down* by other developers
 so make sure your code follow the guidelines and pass the tests.
 
-You have to add unit tests for your code becuase in this way other developers can check if their
+You have to add unit tests for your code because in this way other developers can check if their
 own changes to other parts of the code affects in any way your contribution just running the
 tests suite.
 
